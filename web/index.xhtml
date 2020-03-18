@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>App 01</title>
+    </h:head>
+    <h:body>
+        <h:form>
+
+            <h1 style="margin-top:0">John Sebastian Gordillo Avila - Ingenieria de Software</h1>
+
+            <p:panel id="Información" header="Basic" footer="Titulo fin" style="margin-bottom:20px">
+
+
+                <style type="text/css">
+                    .ui-scrollpanel p {
+                        width: 500px;
+                        font-size: 16px;
+                    }
+                </style>
+
+
+                <h3 style="margin-top:0">Coronavirus </h3>
+                <p:scrollPanel style="width:550px;height:200px">
+                    <p>
+                        En Colombia hay 65 casos confirmados por coronavirus, 
+                        estas son las ciudades y municipios en los que se han diagnosticado pacientes positivos.                    </p>
+                    <p>
+                        COVID-19: A finales de diciembre de 2019 se notificaron los primeros casos de un nuevo coronavirus en la ciudad de Wuhan (China). Desde entonces el goteo de nuevos infectados por el virus SARS-CoV-2 (inicialmente llamado 2019nCoV), que provoca el COVID-19, ha sido continuo y su transmisión de persona a persona se ha acelerado. Los casos declarados de nemonía de Wuhan ya superan con creces a los de la epidemia de SRAS, pero la tasa de letalidad es más baja.
+
+                        La Organización Mundial de la Salud (OMS) ha declarado la situación de pandemia. Hay personas infectadas en la mayoría de los países y los profesionales sanitarios insisten en la necesidad de seguir las medidas preventivas y evitar la alarma social. De momento, el país más afectado en Europa es Italia. En España, las autoridades sanitarias y las sociedades científicas consideran que nuestro país está preparado para contener la transmisión
+                    </p>
+
+                </p:scrollPanel>
+
+
+
+
+
+
+            </p:panel>
+            <h:form> 
+                <p:growl id="growl" life="2000" />
+
+                <p:commandButton value="Guardar" id="ajax"  action="#{buttonView.buttonAction}" style="margin-right:20px;" styleClass="ui-priority-primary" />
+
+            </h:form>
+
+            <h:form>  
+                <p:growl id="messages" showDetail="false"/>
+
+                <h3 style="margin-top:0">Menu</h3>
+                <p:menu>
+                    <p:submenu label="Mas Información">
+                        <p:menuitem value="Cuarentena" action="#{menuView.cuarentena}" update="messages" icon="pi pi-save" />
+                    </p:submenu>
+                    <p:submenu label="En el resto del mundo">
+                        <p:menuitem value="Nuevos Casos" action="#{menuView.nuevos}" update="messages" ajax="false" icon="pi pi-times"/>
+                    </p:submenu>
+
+                </p:menu>
+            </h:form>
+
+        </h:form>
+    </h:body>
+</html>
+
